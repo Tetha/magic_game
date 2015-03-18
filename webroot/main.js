@@ -1,8 +1,7 @@
 var Game = Game || {};
 
-require([ 'lib/crafty-min.js' ], function() {
+require([ 'lib/crafty-min.js', 'runes/scene' ], function(cf, runes_scene ) {
     Crafty.init(500, 500, document.getElementById('game'));
-    require([ 'runes/scene.js' ], function() {
-        Crafty.enterScene('runes.gamescreen');
-    })
+    runes_scene.boot();
+    Crafty.enterScene('runes.gamescreen');
 });
